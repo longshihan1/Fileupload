@@ -1,0 +1,109 @@
+WAService.js:19 App: onLaunch have been invoked
+WAService.js:19 App: onShow have been invoked
+WAService.js:19 Register Page: pages/main/main
+WAService.js:19 Register Page: pages/mine/mine
+WAService.js:19 Register Page: pages/order/order
+WAService.js:19 Register Page: pages/noticelist/noticelist
+WAService.js:19 Register Page: pages/knowlist/knowlist
+WAService.js:19 Register Page: pages/map/map
+WAService.js:19 Register Page: pages/malllist/malllist
+WAService.js:19 Register Page: pages/servicelist/servicelist
+WAService.js:19 Register Page: pages/noticedetail/noticedetail
+WAService.js:19 Register Page: pages/malldetail/malldeatil
+appservice?t=1538541285298:1291 Wed Oct 03 2018 12:34:49 GMT+0800 (CST) 接口调整
+VM290:1 获取 wx.getUserInfo 接口后续将不再出现授权弹窗，请注意升级
+参考文档: https://developers.weixin.qq.com/blogdetail?action=get_post_info&lang=zh_CN&token=1650183953&docid=0000a26e1aca6012e896a517556c01
+console.warn @ VM290:1
+operateWXData @ appservice?t=1538541285298:1291
+invoke @ appservice?t=1538541285298:1291
+invoke @ WAService.js:4
+U @ WAService.js:6
+H @ WAService.js:6
+wa @ WAService.js:9
+Pr @ WAService.js:8
+zb.(anonymous function) @ WAService.js:14
+(anonymous) @ WAService.js:6
+(anonymous) @ WAService.js:7
+(anonymous) @ WAService.js:14
+(anonymous) @ WAService.js:6
+success @ app.js? [sm]:39
+function.a.(anonymous function) @ WAService.js:7
+(anonymous) @ WAService.js:4
+s @ WAService.js:6
+(anonymous) @ WAService.js:6
+function.setTimeout @ appservice?t=1538541285298:1291
+(anonymous) @ WAService.js:4
+(anonymous) @ WAService.js:4
+setTimeout (async)
+setTimeout @ WAService.js:4
+v @ appservice?t=1538541285298:1291
+r.registerCallback.t @ appservice?t=1538541285298:1291
+l.forEach.t @ appservice?t=1538541285298:1291
+(anonymous) @ appservice?t=1538541285298:1291
+i.onmessage @ appservice?t=1538541285298:1291
+app.js? [sm]:13 021q6QJ32GiA3N04HCN32qbwJ32q6QJv
+appservice?t=1538541285298:1291 Wed Oct 03 2018 12:34:49 GMT+0800 (CST) 配置中关闭合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书检查
+VM290:1 工具未校验合法域名、web-view（业务域名）、TLS 版本以及 HTTPS 证书。
+console.warn @ VM290:1
+n @ appservice?t=1538541285298:1291
+h @ appservice?t=1538541285298:1291
+createRequestTask @ appservice?t=1538541285298:1291
+invoke @ appservice?t=1538541285298:1291
+invoke @ WAService.js:4
+U @ WAService.js:6
+H @ WAService.js:6
+Rt @ WAService.js:7
+e @ WAService.js:12
+(anonymous) @ WAService.js:13
+(anonymous) @ WAService.js:6
+(anonymous) @ WAService.js:7
+(anonymous) @ WAService.js:14
+(anonymous) @ WAService.js:6
+success @ app.js? [sm]:14
+function.a.(anonymous function) @ WAService.js:7
+(anonymous) @ WAService.js:4
+s @ WAService.js:6
+(anonymous) @ WAService.js:6
+function.setTimeout @ appservice?t=1538541285298:1291
+(anonymous) @ WAService.js:4
+(anonymous) @ WAService.js:4
+setTimeout (async)
+setTimeout @ WAService.js:4
+v @ appservice?t=1538541285298:1291
+r.registerCallback.t @ appservice?t=1538541285298:1291
+l.forEach.t @ appservice?t=1538541285298:1291
+(anonymous) @ appservice?t=1538541285298:1291
+i.onmessage @ appservice?t=1538541285298:1291
+app.js? [sm]:24 {uid: "TnKaUPjHHL11ZTT41253A-", username: "", created: 0, activated: 0, logged: 0, …}
+app.js? [sm]:26 TnKaUPjHHL11ZTT41253A-
+app.js? [sm]:28 TnKaUPjHHL11ZTT41253A-
+app.js? [sm]:41 {errMsg: "getUserInfo:ok", rawData: "{"nickName":"龙贺","gender":1,"language":"zh_CN","ci…RncBE8wI00DAByicLbBB1kANzrIBsgBJSPOjpNd0pVw/132"}", userInfo: {…}, signature: "1cbf92246d0e4168f044b38dd6321f93e81368c1", encryptedData: "vDLh1IThtAWvx5YmC6RTiqCi01yzOCF57HZoDb9HSEz8jBmXWI…BxbRpvPz2bhXp4riOZy25YXUVEP6MqzCYvl+m/3HyA0eiX8k=", …}
+app.js? [sm]:42 1cbf92246d0e4168f044b38dd6321f93e81368c1
+app.js? [sm]:43 {"nickName":"龙贺","gender":1,"language":"zh_CN","city":"Pudong New District","province":"Shanghai","country":"China","avatarUrl":"https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTJQnBcYjeXQArtYWuGgibBqfHDZfNdQBNRAARncBE8wI00DAByicLbBB1kANzrIBsgBJSPOjpNd0pVw/132"}
+app.js? [sm]:44 vDLh1IThtAWvx5YmC6RTiqCi01yzOCF57HZoDb9HSEz8jBmXWIpiGPBx2AxpkPstOYcTgwWAd3SXNc3mXYH76OHSdab2ejXADyvF/3GzvQ/jJFdf6tcrQM49/k1I9+UPyHy+aunsV8/VCKWAMyOazCTpqKrw8y22goPUurlZumtQlhuPxKSNEQCCzsi2gJ+vKc7KMQWDpH5Xfewt1y+f6zhddOLIvFXJARvTHkKLGzAiXqRVX6bKbxfzhWez/puZu8E1rcgZKdTfEJPgP9I4ZjDX18+RvS3Z78fHPY8+o55xthV8aVg2WIFLTdNnN91qGkBJ2YhQg8jwQdOjAKFkYgCKlirnzXcG+g1KnnfoqXPK1MTucJiMQgb1ycKLykVop1+FOBfGB97Ezbc9nmX310B4lbEsqqlNuTibIsWY0hEPtyix/ym1L3z3wPHBxbRpvPz2bhXp4riOZy25YXUVEP6MqzCYvl+m/3HyA0eiX8k=
+app.js? [sm]:45 lm7aU5Sj4a+k1Rj1Fh7aRQ==
+WAService.js:19 On app route: pages/main/main
+WAService.js:19 Update view with init data
+WAService.js:19 pages/main/main: onLoad have been invoked
+main.js? [sm]:36 log
+WAService.js:19 pages/main/main: onShow have been invoked
+WAService.js:19 Invoke event onReady in page: pages/main/main
+WAService.js:19 pages/main/main: onReady have been invoked
+WAService.js:19 Invoke event sortClick in page: pages/main/main
+main.js? [sm]:90 mall
+WAService.js:19 On app route: pages/malllist/malllist
+WAService.js:19 pages/main/main: onHide have been invoked
+WAService.js:19 Update view with init data
+WAService.js:19 pages/malllist/malllist: onLoad have been invoked
+WAService.js:19 pages/malllist/malllist: onShow have been invoked
+WAService.js:19 Invoke event onReady in page: pages/malllist/malllist
+WAService.js:19 pages/malllist/malllist: onReady have been invoked
+malllist.js? [sm]:23 TnKaUPjHHL11ZTT41253A-
+malllist.js? [sm]:66 {"pageNum":1,"pageSize":20,"size":7,"startRow":1,"endRow":7,"pages":1,"prePage":0,"nextPage":0,"isFirstPage":true,"isLastPage":true,"hasPreviousPage":false,"hasNextPage":false,"navigatePages":8,"navigatepageNums":[1],"navigateFirstPage":1,"navigateLastPage":1,"total":7,"list":[{"goodsId":"1EJ6Y5xoHd5xpZYMT_g2w-","title":"测试商品2","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1538364171\u0026di\u003d082b33a19c34b91e08512f253f80552b\u0026imgtype\u003djpg\u0026er\u003d1\u0026src\u003dhttp%3A%2F%2Fpic23.photophoto.cn%2F20120609%2F0020033094827139_b.jpg","content":"测试商品2.1","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":1.0,"province":"上海"},{"goodsId":"DInz_1eyHDi-ewJWjVcwJ0","title":"测试商品4","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452144\u0026di\u003ddb58596bb71de5da3365dae5cbe92bfd\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fa686c9177f3e6709547566f831c79f3df8dc55bb.jpg","content":"测试商品2.3","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":1.0,"province":"上海"},{"goodsId":"k2hrv23yH6X-X3QAg1nLS1","title":"测试商品3","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452144\u0026di\u003d171a011c46203b52202d8b85ae06df0a\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F6609c93d70cf3bc7eca6bbfedb00baa1cd112a79.jpg","content":"测试商品2.2","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":1.5,"province":"上海"},{"goodsId":"LdWpquH3G91RYDhQy707g-","title":"测试商品5","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452144\u0026di\u003da7b2482dcae3110df250913c435ed392\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F6159252dd42a2834d624640b51b5c9ea15cebf34.jpg","content":"测试商品2.3","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":3.0,"province":"上海"},{"goodsId":"lHOsQG_THYD6ELHPKxiD70","title":"测试商品6","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452144\u0026di\u003df380407257f68f2635e66a56543ac0f3\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F1f178a82b9014a90722505a0a3773912b31bee90.jpg","content":"测试商品2.2","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":1.0,"province":"上海"},{"goodsId":"TutOqQWnI_9gq6RCFojv30","title":"测试商品7","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452144\u0026di\u003d60e062c862d262f12e139ce24f87cd5a\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F14ce36d3d539b600e44449aae350352ac65cb721.jpg","content":"测试商品2.2","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":1.0,"province":"上海"},{"goodsId":"uMejsJXJFSe4i9PhL60eN-","title":"测试商品8","desPic":"https://timgsa.baidu.com/timg?image\u0026quality\u003d80\u0026size\u003db9999_10000\u0026sec\u003d1537769452143\u0026di\u003d19f2f406eba733bf7caea32f0bf17611\u0026imgtype\u003d0\u0026src\u003dhttp%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F3812b31bb051f819b05efd42d0b44aed2e73e7bb.jpg","content":"测试商品2.2","authorId":"1","type":"goods","status":"0","tags":"","categories":"","money":1.0,"originprice":2.0,"province":"上海"}]}
+malllist.js? [sm]:68 (7) [{…}, {…}, {…}, {…}, {…}, {…}, {…}]
+WAService.js:19 Invoke event addcart in page: pages/malllist/malllist
+malllist.js? [sm]:111 {goodsId: "1EJ6Y5xoHd5xpZYMT_g2w-", title: "测试商品2", desPic: "https://timgsa.baidu.com/timg?image&quality=80&siz…photophoto.cn%2F20120609%2F0020033094827139_b.jpg", content: "测试商品2.1", authorId: "1", …}
+malllist.js? [sm]:116 {goodsId: "1EJ6Y5xoHd5xpZYMT_g2w-", title: "测试商品2", desPic: "https://timgsa.baidu.com/timg?image&quality=80&siz…photophoto.cn%2F20120609%2F0020033094827139_b.jpg", content: "测试商品2.1", authorId: "1", …}authorId: "1"categories: ""content: "测试商品2.1"desPic: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1538364171&di=082b33a19c34b91e08512f253f80552b&imgtype=jpg&er=1&src=http%3A%2F%2Fpic23.photophoto.cn%2F20120609%2F0020033094827139_b.jpg"goodsId: "1EJ6Y5xoHd5xpZYMT_g2w-"money: 1num: 1originprice: 1province: "上海"sex: "num"status: "0"tags: ""title: "测试商品2"type: "goods"__proto__: Object
+WAService.js:19 Invoke event malldetail in page: pages/malllist/malllist
+malllist.js? [sm]:136 {goodsId: "1EJ6Y5xoHd5xpZYMT_g2w-", title: "测试商品2", desPic: "https://timgsa.baidu.com/timg?image&quality=80&siz…photophoto.cn%2F20120609%2F0020033094827139_b.jpg", content: "测试商品2.1", authorId: "1", …}
+malllist.js? [sm]:130 null
