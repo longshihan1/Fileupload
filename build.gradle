@@ -4,9 +4,21 @@ buildscript {
     }
     repositories {
         mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
+    }
+}
+
+//配置从阿里云源下载依赖
+allprojects {
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
     }
 }
 
@@ -14,13 +26,27 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+//apply plugin: 'docker'
+apply plugin: 'com.palantir.docker'
 
 group = 'com.longshihan'
 version = '0.0.1'
 sourceCompatibility = 1.8
 
+bootJar {
+    baseName = 'upload'
+    version =  '0.0.3'
+}
+docker {
+    dependsOn build
+    name "${project.group}/${bootJar.baseName}"
+    files bootJar.archivePath
+    buildArgs(['JAR_FILE': "${bootJar.archiveName}"])
+}
+
 repositories {
     mavenCentral()
+
 }
 
 
@@ -28,4 +54,5 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
     implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation('com.google.code.gson:gson:2.8.0')
 }

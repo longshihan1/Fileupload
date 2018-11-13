@@ -10,8 +10,11 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 @Controller
 @RequestMapping("/file")
@@ -36,7 +39,8 @@ public class FileController {
      */
     @RequestMapping("/upload")
     @ResponseBody
-    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public APIResponce handleFileUpload(@RequestParam("file") MultipartFile file) {
+        String filename;
         if (!file.isEmpty()) {
             try {
                 /*
@@ -45,27 +49,32 @@ public class FileController {
                  * 这里只是简单一个例子,请自行参考，融入到实际中可能需要大家自己做一些思考，比如： 1、文件路径； 2、文件名；
                  * 3、文件格式; 4、文件大小的限制;
                  */
+                filename=getRandomFileName()+"_"+file.getOriginalFilename();
+                File file1=new File("/var/images/"+filename);
+                if (file1.exists()){
+                    file1.createNewFile();
+                }
                 BufferedOutputStream out = new BufferedOutputStream(
-                        new FileOutputStream(new File(file.getOriginalFilename())));
+                        new FileOutputStream(file1));
                 System.out.println(file.getName());
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
-                return "上传失败," + e.getMessage();
+                return APIResponce.fail("上传失败," + e.getMessage());
             } catch (IOException e) {
                 e.printStackTrace();
-                return "上传失败," + e.getMessage();
+                return APIResponce.fail("上传失败," + e.getMessage());
             } catch (Exception e){
                 e.printStackTrace();
-                return "上传失败," + e.getMessage();
+                return APIResponce.fail("上传失败," + e.getMessage());
             }
 
-            return "上传成功";
+            return new APIResponce(new FileEntity(filename));
 
         } else {
-            return "上传失败，因为文件是空的.";
+            return APIResponce.fail("上传失败，因为文件是空的.");
         }
     }
 
@@ -90,7 +99,7 @@ public class FileController {
                 try {
                     byte[] bytes = file.getBytes();
                     stream = new BufferedOutputStream(new FileOutputStream(
-                            new File(file.getOriginalFilename())));
+                            new File("/var/images/"+file.getOriginalFilename())));
                     stream.write(bytes);
                     stream.close();
                 } catch (Exception e) {
@@ -104,6 +113,24 @@ public class FileController {
             }
         }
         return "upload successful";
+    }
+
+
+    public static String getRandomFileName() {
+
+        SimpleDateFormat simpleDateFormat;
+
+        simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
+
+        Date date = new Date();
+
+        String str = simpleDateFormat.format(date);
+
+        Random random = new Random();
+
+        int rannum = (int) (random.nextDouble() * (99999 - 10000 + 1)) + 10000;// 获取5位随机数
+
+        return str+"_"+rannum ;// 当前时间
     }
 
 }
