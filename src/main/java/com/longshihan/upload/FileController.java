@@ -39,7 +39,7 @@ public class FileController {
      */
     @RequestMapping("/upload")
     @ResponseBody
-    public APIResponce handleFileUpload(@RequestParam("file") MultipartFile file) {
+    public String handleFileUpload(@RequestParam("file") MultipartFile file) {
         String filename;
         if (!file.isEmpty()) {
             try {
@@ -60,21 +60,15 @@ public class FileController {
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
-            } catch (FileNotFoundException e) {
+            }  catch (Exception e){
                 e.printStackTrace();
-                return APIResponce.fail("上传失败," + e.getMessage());
-            } catch (IOException e) {
-                e.printStackTrace();
-                return APIResponce.fail("上传失败," + e.getMessage());
-            } catch (Exception e){
-                e.printStackTrace();
-                return APIResponce.fail("上传失败," + e.getMessage());
+                return APIResponce.fail("上传失败," + e.getMessage()).toString();
             }
 
-            return new APIResponce(new FileEntity(filename));
+            return new APIResponce(new FileEntity(filename)).toString();
 
         } else {
-            return APIResponce.fail("上传失败，因为文件是空的.");
+            return APIResponce.fail("上传失败，因为文件是空的.").toString();
         }
     }
 
