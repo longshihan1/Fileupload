@@ -49,9 +49,9 @@ public class FileController {
                  * 这里只是简单一个例子,请自行参考，融入到实际中可能需要大家自己做一些思考，比如： 1、文件路径； 2、文件名；
                  * 3、文件格式; 4、文件大小的限制;
                  */
-                filename=getRandomFileName()+"_"+file.getOriginalFilename();
+                filename=getRandomFileName();
                 File file1=new File("/var/images/"+filename);
-                if (file1.exists()){
+                if (!file1.exists()){
                     file1.createNewFile();
                 }
                 BufferedOutputStream out = new BufferedOutputStream(
