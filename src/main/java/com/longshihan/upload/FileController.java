@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.*;
+import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -41,32 +42,28 @@ public class FileController {
     @ResponseBody
     public String handleFileUpload(@RequestParam("file") MultipartFile file) {
         String filename;
+        String path="--";
         if (!file.isEmpty()) {
             try {
-                /*
-                 * 这段代码执行完毕之后，图片上传到了工程的跟路径； 大家自己扩散下思维，如果我们想把图片上传到
-                 * d:/files大家是否能实现呢？ 等等;
-                 * 这里只是简单一个例子,请自行参考，融入到实际中可能需要大家自己做一些思考，比如： 1、文件路径； 2、文件名；
-                 * 3、文件格式; 4、文件大小的限制;
-                 */
-                filename=getRandomFileName();
-                File file1=new File("/var/images/"+filename);
-                if (!file1.exists()){
+                filename = getRandomFileName() + "_" + file.getOriginalFilename();
+                File file1 = new File( "/data/"+filename);
+                if (!file1.exists())
                     file1.createNewFile();
-                }
+                path=file1.getCanonicalPath();
                 BufferedOutputStream out = new BufferedOutputStream(
                         new FileOutputStream(file1));
                 System.out.println(file.getName());
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
-            }  catch (Exception e){
-                e.printStackTrace();
-                return APIResponce.fail("上传失败," + e.getMessage()).toString();
+            } catch (FileNotFoundException e) {
+                return APIResponce.fail("上传失败 FileNotFoundException," + e.getMessage()+":::::"+path).toString();
+            } catch (IOException e) {
+                return APIResponce.fail("上传失败 IOException," + e.getMessage()+":::::"+path).toString();
+            } catch (Exception e){
+                return APIResponce.fail("上传失败 Exception," + e.getMessage()+":::::"+path).toString();
             }
-
-            return new APIResponce(new FileEntity(filename)).toString();
-
+            return new APIResponce(new FileEntity(filename+":"+path)).toString();
         } else {
             return APIResponce.fail("上传失败，因为文件是空的.").toString();
         }
