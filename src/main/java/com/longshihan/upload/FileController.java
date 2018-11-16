@@ -63,7 +63,7 @@ public class FileController {
             } catch (Exception e){
                 return APIResponce.fail("上传失败 Exception," + e.getMessage()+":::::"+path).toString();
             }
-            return new APIResponce(new FileEntity(filename+":"+path)).toString();
+            return new APIResponce(new FileEntity(filename)).toString();
         } else {
             return APIResponce.fail("上传失败，因为文件是空的.").toString();
         }

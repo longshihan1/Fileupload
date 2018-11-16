@@ -16,4 +16,9 @@ public class FileEntity implements Serializable {
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
+
+    @Override
+    public String toString() {
+        return "文件名称："+getFilePath();
+    }
 }
